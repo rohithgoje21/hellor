@@ -41,7 +41,7 @@ app.post("/results", async (req, res) => {
     //   }
     // }
     const requests = [];
-    for (let id = 30; id > 20; id--) {
+    for (let id = 50; id > 0; id--) {
       const data = `hallticket=${hallticket}&result=${id}`;
       requests.push(
         await axios.post(url, data, {
