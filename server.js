@@ -16,6 +16,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/results", async (req, res) => {
+  console.log("Request received at /results");
   const hallticket = req.body.hallticket;
   let results = "";
 
