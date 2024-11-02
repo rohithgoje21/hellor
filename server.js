@@ -24,20 +24,40 @@ app.post("/results", async (req, res) => {
     "https://results.cmrithyderabad.edu.in/helper.php?gamaOne=getResult";
 
   try {
+    // for (let id = 50; id > 0; id--) {
+    //   const data = `hallticket=${hallticket}&result=${id}`;
+    //   // Fetch data from the API
+    //   const response = await axios.post(url, data, {
+    //     headers: {
+    //       "Content-Type": "application/x-www-form-urlencoded",
+    //     },
+    //     cache: "no-cache",
+    //   });
+    //   const invalidResult =
+    //     '<div class="isa_error">Invalid Hallticket, Please contact Exam Branch if you think this is a mistake.</div>';
+
+    //   const result = response.data;
+    //   if (result !== invalidResult) {
+    //     results += result;
+    //   }
+    // }
+    const requests = [];
     for (let id = 50; id > 0; id--) {
       const data = `hallticket=${hallticket}&result=${id}`;
-
-      // Fetch data from the API
-      const response = await axios.post(url, data, {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        cache: "no-cache",
-      });
-      const invalidResult =
-        '<div class="isa_error">Invalid Hallticket, Please contact Exam Branch if you think this is a mistake.</div>';
-
-      const result = response.data;
+      requests.push(
+        await axios.post(url, data, {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          cache: "no-cache",
+        })
+      );
+    }
+    const responses = await Promise.all(requests);
+    const invalidResult =
+      '<div class="isa_error">Invalid Hallticket, Please contact Exam Branch if you think this is a mistake.</div>';
+    for (let response of responses) {
+      let result = response.data;
       if (result !== invalidResult) {
         results += result;
       }
