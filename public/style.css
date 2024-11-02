@@ -1,0 +1,149 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.logo {
+  text-align: center;
+  padding: 15px;
+  color: white;
+}
+
+.logo img {
+  max-width: 100px;
+}
+
+.logo h1 {
+  font-size: 24px;
+  color: #053a63;
+}
+
+.goBackDiv {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.goBackDiv a {
+  color: #05253d;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.notificationHolder {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tutionFeeHeader {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #053a63;
+  text-align: center;
+}
+
+.hallticket {
+  width: calc(100% - 22px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: large;
+  letter-spacing: 2px;
+}
+
+.getResultButton {
+  background-color: #053a63;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.getResultButton:hover {
+  background-color: #042a4d;
+}
+
+.footer {
+  text-align: center;
+  padding: 8px;
+  background-color: #053a63;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+#wrapper {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.table .row {
+  display: table-row;
+  border-bottom: 1px solid #ccc;
+}
+
+.table .cell {
+  padding: 10px;
+  text-align: left;
+  border-right: 1px solid #ccc;
+  display: table-cell;
+}
+
+.table .header .cell {
+  background-color: #333;
+  color: #fff;
+}
+
+.table .row:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.table .row:nth-child(even) {
+  background-color: #fff;
+}
+
+.no-print {
+  display: none;
+}
+
+p {
+  margin-bottom: 50px;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 12px;
+  }
+  .table {
+    overflow-x: scroll;
+  }
+  #wrapper {
+    padding: 2px;
+  }
+}
